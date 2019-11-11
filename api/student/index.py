@@ -17,6 +17,8 @@ def catch_all(path):
             parsed_request = request_form.split(' ')
             if parsed_request[0].lower()=="student":
                 return jsonify("Success. Received  {}".format(parsed_request[1])),200
+            else:
+                return jsonify("Invalid Request. Try the syntax '/4geeks student <email>'")
 
         except Exception as e:
             return "An exception of type {0} occurred. \nArguments: {1!r}".format(
