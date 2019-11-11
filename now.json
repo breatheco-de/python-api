@@ -1,5 +1,5 @@
 {
-    "name": "flask-microservices-framework",
+    "name": "bc-python-api",
     "version": 2,
     "builds": [
         {
