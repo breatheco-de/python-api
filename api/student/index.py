@@ -11,9 +11,9 @@ from flask_cors import CORS
 app = Flask(__name__)
 
 @app.route('/', defaults={'path': ''})
-@app.route('/<path:path>', methods=["GET"])
+@app.route('/<path:path>', methods=["GET","POST"])
 def catch_all(path):
-    if request.method=="GET":
+    if request.method=="POST":
         try:
             student = request.args.get('text')
             if student == None:
