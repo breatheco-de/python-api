@@ -18,7 +18,7 @@ def catch_all(path):
             student = request.args.get('student')
             if student == None:
                 return Response("Student name not provided. Please check your request and try again."),400
-            return Response("Success. Student:  %s",student),200
+            return Response("Success. Student:  {}".format(student)),200
 
         except Exception as e:
             return "An exception of type {0} occurred. \nArguments: {1!r}".format(
