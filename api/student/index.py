@@ -11,14 +11,12 @@ app = Flask(__name__)
 def catch_all(path):
     if request.method=="POST":
         try:
-            # student = request.json.get('text')
             request_form = request.form['text']
             if request_form == None:
                 return jsonify("Student name not provided. Please check your request and try again."),400
-            try:
-                parsed_request = request_form.split(' ')
-                if parsed_request[0].lower()=="student":
-                    return jsonify("Success. Received  {}".format(parsed_request[1])),200
+            parsed_request = request_form.split(' ')
+            if parsed_request[0].lower()=="student":
+                return jsonify("Success. Received  {}".format(parsed_request[1])),200
 
         except Exception as e:
             return "An exception of type {0} occurred. \nArguments: {1!r}".format(
