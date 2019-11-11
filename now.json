@@ -17,5 +17,15 @@
             "dest": "api/*/$1.py",
             "continue": true
         }
-    ]
+    ],
+    "env": {
+        "CLIENT_ID": "@client_id",
+        "CLIENT_SECRET": "@client_secret"
+    },
+    "build": {
+        "env": {
+            "CLIENT_ID": "@client_id",
+            "CLIENT_SECRET": "@client_secret"
+        }
+    }
 }
