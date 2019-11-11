@@ -2,9 +2,6 @@
 
 We welcome contributions in this repository! If you'd like to contribute, there are a few guidelines you should follow.
 
-**Project Kanban**: [View Board](https://github.com/jferragut/flask-microservices-boilerplate/projects/1)<br/>
-**Roadmap**: [View Roadmap](https://github.com/jferragut/flask-microservices-boilerplate/issues/5)
-
 ## Step 1: Fork this Repo
 
 To be able to debug, troubleshoot, or create new features for this repo, you will have to start by forking the repository.
