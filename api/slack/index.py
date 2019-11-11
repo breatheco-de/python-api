@@ -48,8 +48,12 @@ def catch_all(path):
                 return jsonify("Invalid Request. Try the syntax '/4geeks student <email>'")
 
         except Exception as e:
-            return "An exception of type {0} occurred. \nArguments: {1!r}".format(
-                type(e).__name__, e.args)
+            exc_type, exc_obj, tb = sys.exc_info()
+            f = tb.tb_frame
+            lineno = tb.tb_lineno
+            filename = f.f_code.co_filename
+            return "An exception of type {0} occurred. \nArguments: {1!r} \nFile: {2}\nLine: {3}".format(
+                type(e).__name__, e.args,filename,lineno)
     else:
         return jsonify("You have used an unsupported request type. Please check the type and try again."),404
 
