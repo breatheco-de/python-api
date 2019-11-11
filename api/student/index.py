@@ -15,7 +15,7 @@ app = Flask(__name__)
 def catch_all(path):
     if request.method=="GET":
         try:
-            student = request.args.get('student')
+            student = request.args.get('text')
             if student == None:
                 return Response("Student name not provided. Please check your request and try again."),400
             return Response("Success. Student:  {}".format(student)),200
