@@ -1,5 +1,5 @@
 {
-    "name": "bc-python-api",
+    "name": "python-api",
     "version": 2,
     "builds": [
         {
