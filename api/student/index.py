@@ -1,11 +1,7 @@
 import os
 from flask import Flask, request, jsonify, url_for, Blueprint, Response
-# from flask_dotenv import DotEnv
-# from flask_sqlalchemy import SQLAlchemy
-# from flask_migrate import Migrate
 from flask_swagger import swagger
 from flask_cors import CORS
-# from api.user.model import db,User
 
 
 app = Flask(__name__)
@@ -18,8 +14,9 @@ def catch_all(path):
             request_json = request.get_json()
             student = request_json.get('text')
             if student == None:
-                return Response("Student name not provided. Please check your request and try again."),400
-            return jsonify("Success. Student:  {}".format(student)),200
+                return jsonify("Student name not provided. Please check your request and try again."),400
+            else:
+                return jsonify({"Success. Student:  {}"}.format(student)),200
 
         except Exception as e:
             return "An exception of type {0} occurred. \nArguments: {1!r}".format(
