@@ -15,7 +15,8 @@ app = Flask(__name__)
 def catch_all(path):
     if request.method=="POST":
         try:
-            student = request.args.get('text')
+            request_json = request.get_json()
+            student = request_json.get('text')
             if student == None:
                 return Response("Student name not provided. Please check your request and try again."),400
             return jsonify("Success. Student:  {}".format(student)),200
