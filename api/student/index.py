@@ -7,12 +7,11 @@ from flask_cors import CORS
 app = Flask(__name__)
 
 @app.route('/', defaults={'path': ''})
-@app.route('/<path:path>', methods=["GET","POST"])
+@app.route('/<path:path>', methods=["POST"])
 def catch_all(path):
     if request.method=="POST":
         try:
-            request_json = request.get_json()
-            student = request_json.get('text')
+            student = request.json.get('text')
             if student == None:
                 return jsonify("Student name not provided. Please check your request and try again."),400
             else:
