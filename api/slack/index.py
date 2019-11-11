@@ -6,8 +6,8 @@ from flask_cors import CORS
 app = Flask(__name__)
 api = "https://api.breatheco.de/api/"
 
-client_id = os.environ['CLIENT_ID']
-client_secret = os.environ['CLIENT_SECRET']
+client_id = os.environ['breathecode_client_id']
+client_secret = os.environ['breathecode_client_secret']
 
 @app.route('/', defaults={'path': ''})
 @app.route('/<path:path>', methods=["POST"])
