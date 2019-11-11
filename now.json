@@ -18,10 +18,9 @@
             "continue": true
         }
     ],
-    "build": {
-        "env": {
-            "CLIENT_ID": "@client_id",
-            "CLIENT_SECRET": "@client_secret"
-        }
+    "env": {
+        "breathecode_client_id": "@breathecode_client_id",
+        "breathecode_client_secret": "@breathecode_client_secret"
     }
+
 }
