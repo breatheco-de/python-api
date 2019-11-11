@@ -18,14 +18,10 @@
             "continue": true
         }
     ],
-    "env": {
-        "CLIENT_ID": "@client-id",
-        "CLIENT_SECRET": "@client-secret"
-    },
     "build": {
         "env": {
-            "CLIENT_ID": "@client-id",
-            "CLIENT_SECRET": "@client-secret"
+            "CLIENT_ID": "@client_id",
+            "CLIENT_SECRET": "@client_secret"
         }
     }
 }
