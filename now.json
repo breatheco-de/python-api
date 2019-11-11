@@ -19,8 +19,8 @@
         }
     ],
     "env": {
-        "breathecode_client_id": "@breathecode_client_id",
-        "breathecode_client_secret": "@breathecode_client_secret"
+        "BREATHECODE_CLIENT_ID": "@breathecode_client_id",
+        "BREATHECODE_CLIENT_SECRET": "@breathecode_client_secret"
     }
 
 }
