@@ -18,10 +18,10 @@ def catch_all(path):
             student = request.args.get('text')
             if student == None:
                 return Response("Student name not provided. Please check your request and try again."),400
-            return Response("Success. Student:  {}".format(student)),200
+            return jsonify("Success. Student:  {}".format(student)),200
 
         except Exception as e:
             return "An exception of type {0} occurred. \nArguments: {1!r}".format(
                 type(e).__name__, e.args)
     else:
-        return Response("You have used an unsupported request type. Please check the type and try again."),404
+        return jsonify("You have used an unsupported request type. Please check the type and try again."),404
