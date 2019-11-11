@@ -6,8 +6,8 @@ from flask_cors import CORS
 app = Flask(__name__)
 api = "https://api.breatheco.de/api/"
 
-client_id = os.environ['BREATHECODE_CLIENT_ID']
-client_secret = os.environ['BREATHECODE_CLIENT_SECRET']
+client_id = os.environ.get('BREATHECODE_CLIENT_ID')
+client_secret = os.environ.get('BREATHECODE_CLIENT_SECRET')
 
 @app.route('/', defaults={'path': ''})
 @app.route('/<path:path>', methods=["POST"])
@@ -66,5 +66,5 @@ def get_token():
             resp_dict = json.loads(token_response.text)
             return resp_dict['access_token']
     except Exception as e:
-        return "An exception of type {0} occurred. \nArguments: {1!r}".format(
+        return "An exception of type {0} occurred while generating token. \nArguments: {1!r}".format(
             type(e).__name__, e.args)
