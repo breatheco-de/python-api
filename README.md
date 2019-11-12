@@ -1,5 +1,9 @@
 # Breathecode Python APIs
 
+## Description
+
+An extendable API microservices framework for Breathecode APIs, written in Python3/Flask.
+
 ## Endpoints
 
 ### Slack (/api/slack)
@@ -14,13 +18,12 @@ Response:
 ```json
 {
     "full_name": "Joey Smith",
-    "cohorts_taken": [
+    "cohorts": [
         "MDC-X"
     ],
     "github_username": "jsmithy",
-    "status": "Active"
-    "finantial_status": "unknown",
-    "email": "joey@gmail.com",
+    "status": "active",
+    "financial_status": "unknown",
     "phone": "954-555-121",
     "student_external_profile": "https://www.blah.com/jsmithy"
 }
