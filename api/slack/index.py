@@ -40,7 +40,7 @@ def catch_all(path):
                         }
                         return jsonify(json_to_send),200
                     else:
-                        return jsonify("Invalid Token: {}",token),401
+                        return jsonify("msg","Invalid Token"),401
                     
                 else:
                     return jsonify("Email address did not have valid format."),510
@@ -73,7 +73,7 @@ def get_token():
             resp_dict = json.loads(token_response.text)
             return resp_dict['access_token']
         else:
-            return ""
+            return token_response
     except Exception as e:
             exc_type, exc_obj, tb = sys.exc_info()
             f = tb.tb_frame
