@@ -74,3 +74,10 @@ def get_token():
             return resp_dict['access_token']
         else:
             return ""
+    except Exception as e:
+            exc_type, exc_obj, tb = sys.exc_info()
+            f = tb.tb_frame
+            lineno = tb.tb_lineno
+            filename = f.f_code.co_filename
+            return "An exception of type {0} occurred. \nArguments: {1!r} \nFile: {2}\nLine: {3}".format(
+                type(e).__name__, e.args,filename,lineno)
