@@ -25,19 +25,22 @@ def catch_all(path):
                 if re.search(regex,email):
                     # student_endpoint/<email>?access_token=<token>
                     token=get_token()
-                    endpoint = api+"student/"+urllib.parse.quote_plus(email)+"?access_token="+token
-                    api_response = requests.get(endpoint).json()
-                    data = api_response["data"]
-                    json_to_send = {
-                        "full_name": data["first_name"]+" "+data["last_name"],
-                        "cohorts": data["cohorts"],
-                        "github_username": data["github"],
-                        "status": data["status"],
-                        "financial_status": data["financial_status"],
-                        "phone": data["phone"],
-                        "student_external_profile": data["internal_profile_url"]
-                    }
-                    return jsonify(json_to_send),200
+                    if token:
+                        endpoint = api+"student/"+urllib.parse.quote_plus(email)+"?access_token="+token
+                        api_response = requests.get(endpoint).json()
+                        data = api_response["data"]
+                        json_to_send = {
+                            "full_name": data["first_name"]+" "+data["last_name"],
+                            "cohorts": data["cohorts"],
+                            "github_username": data["github"],
+                            "status": data["status"],
+                            "financial_status": data["financial_status"],
+                            "phone": data["phone"],
+                            "student_external_profile": data["internal_profile_url"]
+                        }
+                        return jsonify(json_to_send),200
+                    else:
+                        return jsonify("Invalid Token: {}",token),401
                     
                 else:
                     return jsonify("Email address did not have valid format."),510
