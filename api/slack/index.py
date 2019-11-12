@@ -70,7 +70,4 @@ def get_token():
             resp_dict = json.loads(token_response.text)
             return resp_dict['access_token']
         else:
-            raise Exception
-    except Exception as e:
-        return "An exception of type {0} occurred while generating token. \nArguments: {1!r}".format(
-            type(e).__name__, e.args)
+            return ""
