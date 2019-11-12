@@ -26,7 +26,7 @@ def catch_all(path):
                     # student_endpoint/<email>?access_token=<token>
                     token=get_token()
                     if type(token) is str:
-                        endpoint = api+"student/"+urllib.parse.quote_plus(email)+"?access_token="+token
+                        endpoint = api+"student/"+urllib.parse.quote(email)+"?access_token="+token
                         api_response = requests.get(endpoint).json()
                         data = api_response["data"]
                         json_to_send = {
