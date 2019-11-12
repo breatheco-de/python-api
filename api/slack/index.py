@@ -40,7 +40,7 @@ def catch_all(path):
                         }
                         return jsonify(json_to_send),200
                     else:
-                        return jsonify({"data":token,"msg":"Invalid Token."}),401
+                        return token # this is the response from the token failure
                     
                 else:
                     return jsonify("Email address did not have valid format."),510
