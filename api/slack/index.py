@@ -73,7 +73,8 @@ def get_token():
             resp_dict = json.loads(token_response.text)
             return resp_dict['access_token']
         else:
-            return token_response
+            resp_dict = json.loads(token_response.text)
+            return resp_dict
     except Exception as e:
             exc_type, exc_obj, tb = sys.exc_info()
             f = tb.tb_frame
