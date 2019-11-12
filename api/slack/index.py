@@ -25,7 +25,7 @@ def catch_all(path):
                 if re.search(regex,email):
                     # student_endpoint/<email>?access_token=<token>
                     token=get_token()
-                    if token:
+                    if type(token) is str:
                         endpoint = api+"student/"+urllib.parse.quote_plus(email)+"?access_token="+token
                         api_response = requests.get(endpoint).json()
                         data = api_response["data"]
