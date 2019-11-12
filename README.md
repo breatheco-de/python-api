@@ -10,7 +10,7 @@ An extendable API microservices framework for Breathecode APIs, written in Pytho
 
 The academy slack channel has a command in the format `/bc <command> <parameter>`. When triggered, it will access this api.
 
-#### Student
+#### Command: Student
 takes an `email` parameter and will return specific fields about the student from the student API. 
 
 Command: `/bc student joey@gmail.com`
